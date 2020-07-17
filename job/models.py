@@ -14,6 +14,15 @@ class job(models.Model):
     vanacy = models.IntegerField(default=1)
     expirince = models.IntegerField(default=1)
     salry = models.IntegerField(default=1000)
+    category = models.ForeignKey('category', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title
+
+
+class category(models.Model):
+
+    Name = models.CharField(max_length=25)
+
+    def __str__(self):
+        return self.Name
